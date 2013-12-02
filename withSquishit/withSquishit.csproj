@@ -83,8 +83,8 @@
     <Content Include="js\jquery.1.8.0.js" />
     <Content Include="js\jquery.dropdown.js" />
     <Content Include="Readme.txt" />
+    <Content Include="stylesheets\dropdown.css" />
     <Content Include="stylesheets\index.css" />
-    <Content Include="stylesheets\jquery.dropdown.css" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>

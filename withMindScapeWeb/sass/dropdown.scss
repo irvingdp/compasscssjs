@@ -1,3 +1,5 @@
+@import "sprites/icons";
+
 .dropdown {
 	position: absolute;
 	z-index: 9999999;
@@ -80,7 +82,6 @@
 	color: #555;
 	text-decoration: none;
 	line-height: 18px;
-	padding: 3px 15px;
 	white-space: nowrap;
 }
 
@@ -100,14 +101,15 @@
 
 /* Icon Examples - icons courtesy of http://p.yusukekamiyamane.com/ */
 .dropdown.has-icons LI > A {
-	padding-left: 30px;
-	background-position: 8px center;
+	padding-left: 25px;
+	margin-left:10px;
+	//background-position: 8px center;
 	background-repeat: no-repeat;
 }
 
-.dropdown .undo A { background-image: url(/images/icons/arrow-curve-180-left.png); }
-.dropdown .redo A { background-image: url(/images/icons/arrow-curve.png); }
-.dropdown .cut A { background-image: url(/images/icons/scissors.png); }
-.dropdown .copy A { background-image: url(/images/icons/document-copy.png); }
-.dropdown .paste A { background-image: url(/images/icons/clipboard.png); }
-.dropdown .delete A { background-image: url(/images/icons/cross-script.png); }
+.dropdown .undo A { @include icons-sprite(arrow-curve-180-left); }
+.dropdown .redo A { @include icons-sprite(arrow-curve); }
+.dropdown .cut A { @include icons-sprite(scissors); }
+.dropdown .copy A { @include icons-sprite(document-copy);  }
+.dropdown .paste A { @include icons-sprite(clipboard); }
+.dropdown .delete A { @include icons-sprite(cross-script); }

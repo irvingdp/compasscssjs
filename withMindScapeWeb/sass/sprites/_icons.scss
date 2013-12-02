@@ -1,0 +1,124 @@
+@import "compass/utilities/sprites/base";
+
+// General Sprite Defaults
+// You can override them before you import this file.
+$icons-sprite-base-class: ".icons-sprite" !default;
+$icons-sprite-dimensions: false !default;
+$icons-position: 0% !default;
+$icons-spacing: 5 !default;
+$icons-repeat: no-repeat !default;
+$icons-prefix: '' !default;
+$icons-clean-up: true !default;
+$icons-layout:vertical !default;
+$icons-inline: false !default;
+
+  
+ // These variables control the generated sprite output
+ // You can override them selectively before you import this file.
+ 
+   $icons-arrow-curve-180-left-position: $icons-position !default;
+   $icons-arrow-curve-180-left-spacing:  $icons-spacing !default;
+   $icons-arrow-curve-180-left-repeat:   $icons-repeat !default;
+ 
+   $icons-arrow-curve-position: $icons-position !default;
+   $icons-arrow-curve-spacing:  $icons-spacing !default;
+   $icons-arrow-curve-repeat:   $icons-repeat !default;
+ 
+   $icons-clipboard-position: $icons-position !default;
+   $icons-clipboard-spacing:  $icons-spacing !default;
+   $icons-clipboard-repeat:   $icons-repeat !default;
+ 
+   $icons-cross-script-position: $icons-position !default;
+   $icons-cross-script-spacing:  $icons-spacing !default;
+   $icons-cross-script-repeat:   $icons-repeat !default;
+ 
+   $icons-document-copy-position: $icons-position !default;
+   $icons-document-copy-spacing:  $icons-spacing !default;
+   $icons-document-copy-repeat:   $icons-repeat !default;
+ 
+   $icons-scissors-position: $icons-position !default;
+   $icons-scissors-spacing:  $icons-spacing !default;
+   $icons-scissors-repeat:   $icons-repeat !default;
+ 
+
+ $icons-sprites: sprite-map("icons/*.png",
+ 
+   $icons-arrow-curve-180-left-position: $icons-arrow-curve-180-left-position, 
+   $icons-arrow-curve-180-left-spacing:  $icons-arrow-curve-180-left-spacing, 
+   $icons-arrow-curve-180-left-repeat:   $icons-arrow-curve-180-left-repeat,
+ 
+   $icons-arrow-curve-position: $icons-arrow-curve-position, 
+   $icons-arrow-curve-spacing:  $icons-arrow-curve-spacing, 
+   $icons-arrow-curve-repeat:   $icons-arrow-curve-repeat,
+ 
+   $icons-clipboard-position: $icons-clipboard-position, 
+   $icons-clipboard-spacing:  $icons-clipboard-spacing, 
+   $icons-clipboard-repeat:   $icons-clipboard-repeat,
+ 
+   $icons-cross-script-position: $icons-cross-script-position, 
+   $icons-cross-script-spacing:  $icons-cross-script-spacing, 
+   $icons-cross-script-repeat:   $icons-cross-script-repeat,
+ 
+   $icons-document-copy-position: $icons-document-copy-position, 
+   $icons-document-copy-spacing:  $icons-document-copy-spacing, 
+   $icons-document-copy-repeat:   $icons-document-copy-repeat,
+ 
+   $icons-scissors-position: $icons-scissors-position, 
+   $icons-scissors-spacing:  $icons-scissors-spacing, 
+   $icons-scissors-repeat:   $icons-scissors-repeat,
+ 
+ $layout: $icons-layout,
+ $cleanup: $icons-clean-up
+ );
+
+
+// All sprites should extend this class
+// The icons-sprite mixin will do so for you.
+@if $icons-inline {
+  #{$icons-sprite-base-class} {
+    background-image: inline-sprite($icons-sprites);
+  } 
+} @else {
+  #{$icons-sprite-base-class} {
+    background: $icons-sprites no-repeat;
+  }
+}
+//sass functions to return the dimensions of a sprite image as units
+
+  @function icons-sprite-width($name) {
+    $file: sprite_file($icons-sprites, $name);
+    @return image-width($file);
+  }
+
+  @function icons-sprite-height($name) {
+    $file: sprite_file($icons-sprites, $name);
+    @return image-height($file);
+  }
+
+
+// Use this to set the dimensions of an element
+// based on the size of the original image.
+@mixin icons-sprite-dimensions($name) {
+  @include sprite-dimensions($icons-sprites, $name)
+}
+
+// Move the background position to display the sprite.
+@mixin icons-sprite-position($name, $offset-x: 0, $offset-y: 0) {
+  @include sprite-background-position($icons-sprites, $name, $offset-x, $offset-y)
+}
+
+// Extends the sprite base class and set the background position for the desired sprite.
+// It will also apply the image dimensions if $dimensions is true.
+@mixin icons-sprite($name, $dimensions: $icons-sprite-dimensions, $offset-x: 0, $offset-y: 0) {
+  @extend #{$icons-sprite-base-class};
+  @include sprite($icons-sprites, $name, $dimensions, $offset-x, $offset-y)
+}
+
+@mixin icons-sprites($sprite-names, $dimensions: $icons-sprite-dimensions, $prefix: sprite-map-name($icons-sprites), $offset-x: 0, $offset-y: 0) {
+  @include sprites($icons-sprites, $sprite-names, $icons-sprite-base-class, $dimensions, $prefix, $offset-x, $offset-y)
+}
+
+// Generates a class for each sprited image.
+@mixin all-icons-sprites($dimensions: $icons-sprite-dimensions, $prefix: sprite-map-name($icons-sprites), $offset-x: 0, $offset-y: 0) {
+  @include icons-sprites(arrow-curve-180-left arrow-curve clipboard cross-script document-copy scissors, $dimensions, $prefix, $offset-x, $offset-y);
+}

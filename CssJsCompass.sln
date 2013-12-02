@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "withAjaxMini", "withAjaxMin
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "withSquishit", "withSquishit\withSquishit.csproj", "{5453D2AA-6935-4EC4-AFEC-AB464D37D94D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "withMindScapeWeb", "withMindScapeWeb\withMindScapeWeb.csproj", "{4044B141-1630-44F0-83A8-F15447C402D8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "finally", "finally\finally.csproj", "{B6142818-E32E-4CDD-A591-B5BBF62AB9A9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,6 +29,14 @@ Global
 		{5453D2AA-6935-4EC4-AFEC-AB464D37D94D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5453D2AA-6935-4EC4-AFEC-AB464D37D94D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5453D2AA-6935-4EC4-AFEC-AB464D37D94D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4044B141-1630-44F0-83A8-F15447C402D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4044B141-1630-44F0-83A8-F15447C402D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4044B141-1630-44F0-83A8-F15447C402D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4044B141-1630-44F0-83A8-F15447C402D8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B6142818-E32E-4CDD-A591-B5BBF62AB9A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B6142818-E32E-4CDD-A591-B5BBF62AB9A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B6142818-E32E-4CDD-A591-B5BBF62AB9A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B6142818-E32E-4CDD-A591-B5BBF62AB9A9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
